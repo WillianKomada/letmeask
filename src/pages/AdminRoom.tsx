@@ -10,19 +10,16 @@ import { Button } from "../components/Button";
 import { Question } from "../components/Question";
 
 import { useRoom } from "../hooks/useRoom";
-import { useAuth } from "../hooks/useAuth";
 
 import { database } from "../services/firebase";
 
 import "../styles/room.scss";
-import { check } from "yargs";
 
 type RoomParams = {
   id: string;
 };
 
 export function AdminRoom() {
-  const { user } = useAuth();
   const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
